@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class defaultCustomer extends Seeder
+class defaultAdmin extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,12 +14,12 @@ class defaultCustomer extends Seeder
     {
         User::create(
             [
-            'username' => 'customer',
-            'email' => 'cust@test.com',
+            'name' => 'admin',
+            'email' => 'admin@jf.com',
             'password' => bcrypt('password'),
-            'role' => 'customer',
+            'role' => 'admin',
             ]
-            );
+            ); 
     }
 
 }
