@@ -29,7 +29,6 @@ Route::post('/login', function (Request $request) {
 });
 
 
-
 Route::post('/logout', function (Request $request) {
     $request->user()->currentAccessToken()->delete();
     return response()->json([
