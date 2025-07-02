@@ -30,8 +30,7 @@ Route::post('/login', function (Request $request) {
 
 
 Route::post('/logout', function (Request $request) {
-    $user->tokens()->where('id', $tokenId)->delete();
-    Auth::logout();
+    $request->user()->currentAccessToken()->delete();
     return response()->json([
       'message' => 'Logout successfull'
     ]);
