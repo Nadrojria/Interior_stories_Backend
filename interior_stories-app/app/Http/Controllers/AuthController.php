@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class AuthController extends Controller
 {
     public function register( Request $request){
         $data = $request->validate([
             'name' => 'required|unique:users',
             'email' => 'required|unique:users',
-            'password' => 'required|confirmed',
+            'password' => 'required',
             'role' => 'in:admin,customer',
         ]);
 
         // Set default role to 'admin' if not provided in the request
-        $userData = array_merge($data, ['role' => $data['role'] ?? 'admin']);
+        $userData = array_merge($data, ['role' => $data['role'] ?? 'customer']);
 
 
         // Mass assign the validated request data to a new instance of the User model

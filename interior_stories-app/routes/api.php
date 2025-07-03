@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
-use Http\Controllers\AuthController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/users', function (Request $request) {
     return $request->user();
@@ -41,8 +41,8 @@ Route::post('/logout', function (Request $request) {
 Route::post('/auth/login', [AuthController::class, 'login']);
 //protected route
 Route::group(['middleware' => ['auth:sanctum']], function () {
-    Route::post('/auth/register', [AuthController::class, 'register'])->middleware('restrictRole:admin');
-    Route::get('/users', [PostController::class, 'show'])->middleware('restrictRole:admin');
+    Route::post('/auth/register', [AuthController::class, 'register']);
+    //Route::get('/users', [PostController::class, 'show']);
     //Route::put('/users/{id}', [PostController::class, 'update'])->middleware('restrictRole:customer');
 });
 
