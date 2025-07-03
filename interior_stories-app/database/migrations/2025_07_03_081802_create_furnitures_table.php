@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('furnitures', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->decimal('price', 8, 2); // Prix avec 2 décimales
+            $table->string('category');
+            $table->enum('status', [ 'available', 'unavailable', 'sold'])->default('available');
+            $table->string('image')->nullable(); // Pour plus tard
+            $table->text('description')->nullable(); // Pour plus tard
             $table->timestamps();
         });
     }
