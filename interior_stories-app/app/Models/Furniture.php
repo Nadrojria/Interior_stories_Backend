@@ -2,13 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Furniture extends Model
 {
-    use HasFactory;
-
     protected $table = 'furnitures'; // Forced to have furnitures and not furniture
 
     protected $fillable = [
@@ -22,7 +19,10 @@ class Furniture extends Model
     /**
      * The attributes that should be cast.
      */
-    protected $casts = [
-        'price' => 'decimal:2',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'price' => 'decimal:2',
+        ];
+    }
 }
