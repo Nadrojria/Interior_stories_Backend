@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
+use App\Models\Furniture;
+
 
 Route::get('/users', function (Request $request) {
     return $request->user();
@@ -38,3 +40,7 @@ Route::post('/logout', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
+
+Route::get('/furnitures', function() {
+    return Furniture::all();
+});
