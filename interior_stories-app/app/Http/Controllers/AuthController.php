@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+
 class AuthController extends Controller
 {
     public function register( Request $request){
@@ -14,7 +15,7 @@ class AuthController extends Controller
             'role' => 'in:admin,customer',
         ]);
 
-        // Set default role to 'admin' if not provided in the request
+        // Set default role to 'customer' if not provided in the request
         $userData = array_merge($data, ['role' => $data['role'] ?? 'customer']);
 
 
