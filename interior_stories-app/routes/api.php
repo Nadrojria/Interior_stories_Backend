@@ -4,6 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use App\Http\Controllers\AuthController;
+use App\Models\Furniture;
+
+
 
 Route::get('/users', function (Request $request) {
     return $request->user();
@@ -47,3 +50,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 });
 
 
+
+Route::get('/furnitures', function() {
+    return Furniture::all();
+});
