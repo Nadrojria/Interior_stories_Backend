@@ -40,17 +40,20 @@ Route::post('/logout', function (Request $request) {
     ]);
 })->middleware('auth:sanctum');
 
+
+
+// ***** AUTHENTICATION MANAGEMENT : Routes for CRUD Roles (creation and management)
 //public route
-Route::post('/auth/login', [AuthController::class, 'login']);
+//Route::post('/auth/login', [AuthController::class, 'login']);
 //protected route
-Route::group(['middleware' => ['auth:sanctum']], function () {
-    Route::post('/auth/register', [AuthController::class, 'register']);
-    //Route::get('/users', [PostController::class, 'show']);
-    //Route::put('/users/{id}', [PostController::class, 'update'])->middleware('restrictRole:customer');
-});
+//Route::group(['middleware' => ['auth:sanctum']], function () {
+//     Route::post('/auth/register', [AuthController::class, 'register']);
+//     //Route::get('/users', [PostController::class, 'show']);
+//     //Route::put('/users/{id}', [PostController::class, 'update'])->middleware('restrictRole:customer');
+// });
 
 
 
-Route::get('/furnitures', function() {
+Route::get('/furnitures', function () {
     return Furniture::all();
 });
