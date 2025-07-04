@@ -19,15 +19,17 @@ Route::get('/users', [UserController::class, 'checkUser'])
 
 Route::get('/furnitures', [FurnitureController::class, 'displayAvailableFurnitures']);
 
-Route::get('/furnitures', function() {
-    return Furniture::where('status', 'available')->get();
-});
-
-Route::post('/order/addToCart',[OrderController::class, 'newOrder'])
+Route::post('/order',[OrderController::class, 'newOrder'])
     ->middleware('auth:sanctum');
 
 
 
+
+
+
+
+
+    
 // ***** AUTHENTICATION MANAGEMENT : Routes for CRUD Roles (creation and management)
 //public route
 //Route::post('/auth/login', [UserController::class, 'login']);

@@ -9,7 +9,7 @@ class Furniture extends Model
 {
     use HasFactory;
     
-    protected $table = 'furnitures'; // Forced to have furnitures and not furniture
+    protected $table = 'furnitures'; // Forced to have furniture"s" and not furniture
 
     protected $fillable = [
         'name',
@@ -20,9 +20,6 @@ class Furniture extends Model
         'description',
     ];
 
-    /**
-     * The attributes that should be cast.
-     */
     protected function casts(): array
     {
         return [

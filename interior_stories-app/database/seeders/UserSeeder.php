@@ -20,5 +20,8 @@ class UserSeeder extends Seeder
         $this->call([
               FurnitureSoldSeeder::class,
           ]);
+        $this->call([
+              OrderSeeder::class,
+          ]);
     }
 }

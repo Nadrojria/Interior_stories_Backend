@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Order extends Model
 {
-    
     protected $fillable = [
         'id',
         'furniture_id',
@@ -16,8 +15,6 @@ class Order extends Model
         'status',
         'created_at',
         'updated_at',
-
-
     ];
 
     public function orderItems() : HasMany 

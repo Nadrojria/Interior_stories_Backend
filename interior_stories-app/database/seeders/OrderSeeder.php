@@ -8,9 +8,6 @@ use App\Models\Order;
 
 class OrderSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $orders = [
@@ -36,6 +33,5 @@ class OrderSeeder extends Seeder
 
         Order::insert($orders);
     }
-
 }
 

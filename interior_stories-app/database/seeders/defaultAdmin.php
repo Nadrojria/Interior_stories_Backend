@@ -7,9 +7,6 @@ use Illuminate\Database\Seeder;
 
 class defaultAdmin extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run()
     {
         User::create(
@@ -21,5 +18,4 @@ class defaultAdmin extends Seeder
             ]
             ); 
     }
-
 }

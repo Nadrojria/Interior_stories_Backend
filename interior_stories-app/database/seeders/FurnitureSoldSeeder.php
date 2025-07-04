@@ -8,9 +8,6 @@ use App\Models\Furniture;
 
 class FurnitureSoldSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         Furniture::create([
