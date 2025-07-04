@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->id('furniture_id');
             $table->id('user_id');
-            $table->enum('status', [ 'pending', 'deleted'])->default('pending');
+            $table->enum('status', [ 'pending', 'sold'])->default('pending');
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
         });

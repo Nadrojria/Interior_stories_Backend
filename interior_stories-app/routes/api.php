@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -57,3 +58,10 @@ Route::post('/logout', function (Request $request) {
 Route::get('/furnitures', function () {
     return Furniture::all();
 });
+
+
+Route::middleware('auth:sanctum')->post('/order/add',[OrderController::class, 'newOrder']);
+        
+
+
+
