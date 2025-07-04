@@ -24,7 +24,7 @@ class OrderController extends Controller
         ]);
 
         Furniture::where('id', $Orderdata->furniture_id)
-        ->update(['status' => 'unavailable']); 
+            ->update(['status' => 'unavailable']); 
 
         return response()->json([
             'message' => 'Added to cart',
@@ -33,10 +33,9 @@ class OrderController extends Controller
     }
 
     public function getOrders(Request $request) {
+
         $user = auth()->user();
         $user_id = $user->id;
-
-
 
         return Order::where('status', 'pending')->where('user_id', $user_id)
             ->get();
@@ -55,7 +54,7 @@ class OrderController extends Controller
         $order->delete();
         
         Furniture::where('id', $furniture_id)
-        ->update(['status' => 'available']); 
+            ->update(['status' => 'available']); 
 
         return response()->json(['message' => 'Article cancelled'], 200);
     }
