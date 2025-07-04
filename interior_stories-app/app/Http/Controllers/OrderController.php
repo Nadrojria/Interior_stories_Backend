@@ -11,27 +11,26 @@ class OrderController extends Controller
 {
     //method to create new order : POST 
 
-    public function newOrder(Request $request, )
+    public function newOrder(Request $request)
     {
+        $user = auth()->user();
 
-
-        $user = Auth::user();
-        $user_id = $user->id;
-
-        $Orderdata = $request->validate([
-
-
-            'id' => 'required|unique:orders',
+        // $user = Auth::user();
+         $user_id = $user->id;
+        
+         $Orderdata = Order::create([
             'user_id' => $user_id,
-            'furniture_id' => 'required',
-            'status' => 'required',
-            'created_at' => 'required',
-            'updated_at' => 'required'
+            'furniture_id' => $request->furniture_id,
+            'status' => $request->status ?? 'pending',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
-        $order = Order::create($Orderdata);
-
-        return $order;
+        
+        return response()->json([
+        'message' => 'Ajouté au panier',
+        'order' => $Orderdata,
+    ], 200);
     }
 
 

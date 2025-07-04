@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->id('furniture_id');
-            $table->id('user_id');
+            $table->bigInteger('furniture_id');
+            $table->bigInteger('user_id');
             $table->enum('status', [ 'pending', 'sold'])->default('pending');
             $table->timestamp('created_at');
             $table->timestamp('updated_at');

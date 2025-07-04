@@ -60,7 +60,7 @@ Route::get('/furnitures', function () {
 });
 
 
-Route::middleware('auth:sanctum')->post('/order/add',[OrderController::class, 'newOrder']);
+Route::middleware('auth:sanctum')->post('/order/addToCart',[OrderController::class, 'newOrder']);
         
 
 
