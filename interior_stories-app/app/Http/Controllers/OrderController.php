@@ -9,8 +9,8 @@ use App\Models\Order;
 
 class OrderController extends Controller
 {
-    public function newOrder(Request $request)
-    {
+    public function newOrder(Request $request) {
+        
         $user = auth()->user();
         $user_id = $user->id;
         
@@ -35,5 +35,19 @@ class OrderController extends Controller
 
         return Order::where('status', 'pending')->where('user_id', $user_id)
             ->get();
+    }
+
+    public function deleteOrder($id) {
+
+        $user = auth()->user();
+        $order = Order::find($id);
+
+        if (!$order) {
+            return response()->json(['message' => 'Article not found.'], 404);
+        }
+
+        $order->delete();
+
+        return response()->json(['message' => 'Article cancelled'], 200);
     }
 }

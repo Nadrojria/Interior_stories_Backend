@@ -25,6 +25,10 @@ Route::post('/order',[OrderController::class, 'newOrder'])
 Route::get('/order',[OrderController::class, 'getOrders'])
     ->middleware('auth:sanctum');
 
+Route::delete('/order/{id}', [OrderController::class, 'deleteOrder'])
+    ->middleware('auth:sanctum');
+
+
 
 
 
