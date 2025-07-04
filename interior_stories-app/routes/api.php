@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use App\Models\Furniture;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FurnitureController;
 
 
 Route::post('/login', [LogController::class, 'login']);
@@ -16,10 +17,12 @@ Route::post('/logout', [LogController::class, 'logout'])
 
 Route::get('/users', [UserController::class, 'checkUser'])
     ->middleware('auth:sanctum');
-    
-Route::get('/furnitures', function() {
-    return Furniture::where('status', 'available')->get();
-});
+
+Route::get('/furnitures', [FurnitureController::class, 'displayAvailableFurnitures']);
+
+// Route::get('/furnitures', function() {
+//     return Furniture::where('status', 'available')->get();
+// });
 
 Route::middleware('auth:sanctum')->post('/order/addToCart',[OrderController::class, 'newOrder']);
 
