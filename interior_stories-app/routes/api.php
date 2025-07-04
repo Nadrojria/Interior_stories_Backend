@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -20,6 +21,8 @@ Route::get('/furnitures', function() {
     return Furniture::where('status', 'available')->get();
 });
 
+Route::middleware('auth:sanctum')->post('/order/addToCart',[OrderController::class, 'newOrder']);
+
 // ***** AUTHENTICATION MANAGEMENT : Routes for CRUD Roles (creation and management)
 //public route
 //Route::post('/auth/login', [UserController::class, 'login']);
@@ -29,5 +32,12 @@ Route::get('/furnitures', function() {
 //     //Route::get('/users', [PostController::class, 'show']);
 //     //Route::put('/users/{id}', [PostController::class, 'update'])->middleware('restrictRole:customer');
 // });
+
+
+
+
+
+
+        
 
 
