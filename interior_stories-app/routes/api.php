@@ -52,5 +52,5 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 
 Route::get('/furnitures', function() {
-    return Furniture::all();
+    return Furniture::where('status', 'available')->get();
 });

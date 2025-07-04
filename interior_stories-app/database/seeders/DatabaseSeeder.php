@@ -15,5 +15,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'atest@code.com',
             'password' => Hash::make('testing')
         ]);
+        $this->call([
+              FurnitureSeeder::class,
+          ]);
+        $this->call([
+              FurnitureSoldSeeder::class,
+          ]);
     }
 }
