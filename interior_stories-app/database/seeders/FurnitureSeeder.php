@@ -13,13 +13,6 @@ class FurnitureSeeder extends Seeder
         $furnitures = [
             // Sofas & Armchairs
             [
-                'name' => 'Soriana Sofa',
-                'price' => 8100,
-                'category' => 'Sofas & Armchairs',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
                 'name' => 'Cassina LC3 Sofa',
                 'price' => 6300,
                 'category' => 'Sofas & Armchairs',
