@@ -21,7 +21,9 @@ Route::get('/furnitures', [FurnitureController::class, 'displayAvailableFurnitur
 
 Route::post('/order',[OrderController::class, 'newOrder'])
     ->middleware('auth:sanctum');
-
+    
+Route::get('/order',[OrderController::class, 'getOrders'])
+    ->middleware('auth:sanctum');
 
 
 

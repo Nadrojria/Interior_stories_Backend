@@ -28,4 +28,12 @@ class OrderController extends Controller
             'order' => $Orderdata,
         ], 200);
     }
+
+    public function getOrders(Request $request) {
+        $user = auth()->user();
+        $user_id = $user->id;
+
+        return Order::where('status', 'pending')->where('user_id', $user_id)
+            ->get();
+    }
 }
