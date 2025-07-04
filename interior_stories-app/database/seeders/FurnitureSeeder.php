@@ -15,6 +15,7 @@ class FurnitureSeeder extends Seeder
             [
                 'name' => 'Cassina LC3 Sofa',
                 'price' => 6300,
+                'image' => '/assets/images/furnitures/cassina_lc3_sofa.PNG',
                 'category' => 'Sofas & Armchairs',
                 'created_at' => now(),
                 'updated_at' => now(),
