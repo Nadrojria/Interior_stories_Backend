@@ -24,10 +24,15 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
+            // Génère un nom aléatoire
             'name' => fake()->name(),
+            // Génère un email unique et sécurisé
             'email' => fake()->unique()->safeEmail(),
+            // Date de vérification de l'email (maintenant)
             'email_verified_at' => now(),
+            // Mot de passe hashé (par défaut : 'password')
             'password' => static::$password ??= Hash::make('password'),
+            // Token de session pour "remember me"
             'remember_token' => Str::random(10),
         ];
     }
@@ -37,6 +42,7 @@ class UserFactory extends Factory
      */
     public function unverified(): static
     {
+        // Modifie l'état pour que 'email_verified_at' soit null
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
         ]);

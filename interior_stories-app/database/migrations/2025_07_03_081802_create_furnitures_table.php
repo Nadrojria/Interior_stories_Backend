@@ -4,6 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
+//Modèle pour la création de la table 'furnitures'
+// Cette table stockera les informations sur les meubles disponibles à la vente
+// Elle inclut des champs pour le nom, le prix, la catégorie, le statut, l'image et la description des meubles
+// Le champ 'status' utilise une énumération pour indiquer si le meuble est disponible
 return new class extends Migration
 {
     public function up(): void

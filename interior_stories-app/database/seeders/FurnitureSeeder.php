@@ -6,6 +6,13 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Furniture;
 
+// Ce fichier de Seeder est utilisé pour insérer des données initiales dans la table 'furnitures'.
+// Il contient un tableau de meubles avec leurs noms, prix, images, catégories et timestamps.
+// Chaque meuble est inséré dans la base de données avec les champs 'name', 'price', 'image', 'category', 'created_at' et 'updated_at'.
+// Les images sont stockées dans le répertoire 'assets/images/furnitures/'.
+// Les catégories incluent 'Sofas & Armchairs', 'Chairs & Benches', 'Shelves & Storage', 'Tables & Desks' et 'Beds'.
+// Les prix sont en euros et les meubles sont classés par type pour faciliter la navigation dans l'application.
+// Ce Seeder est exécuté lors de l'installation de l'application pour peupler la base de données avec des meubles prédéfinis.
 class FurnitureSeeder extends Seeder
 {
     public function run(): void

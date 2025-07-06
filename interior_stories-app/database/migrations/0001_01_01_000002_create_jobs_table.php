@@ -4,6 +4,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+// Ce fichier de migration crée les tables nécessaires pour la gestion des tâches en arrière-plan dans l'application.
+// Il est utilisé pour initialiser la base de données lors de l'installation de l'application.
+// Il crée les tables suivantes : 'jobs' pour stocker les tâches, 'job_batches' pour les lots de tâches et 'failed_jobs' pour les tâches échouées.
+// Ces tables sont essentielles pour le fonctionnement du système de file d'attente de Laravel, permettant de gérer les tâches asynchrones, les lots de tâches et les erreurs de traitement des tâches.
 return new class extends Migration
 {
     /**

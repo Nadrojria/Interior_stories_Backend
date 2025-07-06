@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
+// Gère les utilisateurs de l'application
+// Permet de vérifier l'utilisateur actuellement authentifié
+// Utilise le modèle User pour interagir avec la base de données
+// Retourne les informations de l'utilisateur authentifié
+// La méthode checkUser retourne l'utilisateur actuellement connecté
 class UserController extends Controller {
 
     public function checkUser (Request $request) {
@@ -20,7 +25,7 @@ class UserController extends Controller {
 
 
 
-
+// Ce code commenté est pour implémenter les deux rôles différents (admin et customer) dans l'application.
 
 // public function register( Request $request) {
 //     $data = $request->validate([
@@ -36,8 +41,10 @@ class UserController extends Controller {
 
 //     // Mass assign the validated request data to a new instance of the User model
 //     $user = User::create($userData);
+//     // Génération d'un token d'authentification pour l'utilisateur
 //     $token = $user->createToken('my-token')->plainTextToken;
 
+//     // Retourne le token dans la réponse
 //     return response()->json([
 //         'token' =>$token,
 //         'Type' => 'Bearer'

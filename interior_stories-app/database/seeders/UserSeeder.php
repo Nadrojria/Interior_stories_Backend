@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
+// Cette classe est responsable de la génération de données fictives pour les utilisateurs
+// Elle crée un utilisateur de test avec des informations spécifiques,
+// ainsi que des meubles, des meubles vendus et des commandes associées à cet utilisateur.
 class UserSeeder extends Seeder
 {
     public function run(): void
