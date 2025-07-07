@@ -28,6 +28,10 @@ Route::get('/order',[OrderController::class, 'getOrders'])
 Route::delete('/order/{id}', [OrderController::class, 'deleteOrder'])
     ->middleware('auth:sanctum');
 
+Route::put('/order',[OrderController::class, 'completeOrders'])
+    ->middleware('auth:sanctum');
+
+
 
 
 

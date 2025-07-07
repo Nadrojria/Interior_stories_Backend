@@ -58,4 +58,23 @@ class OrderController extends Controller
 
         return response()->json(['message' => 'Article cancelled'], 200);
     }
+
+    public function completeOrders(Request $request) {
+
+        $user = auth()->user();
+        $user_id = $user->id;
+
+        $orders = Order::where('status', 'pending')->where('user_id', $user_id)
+            ->get();
+
+        foreach ($orders as $order) {
+            $order->update(['status' => 'completed']); 
+            $furniture_id = $order->furniture_id;
+    
+            Furniture::where('id', $furniture_id)
+                ->update(['status' => 'sold']);
+        }
+        
+        return response()->json(['message' => 'Order completed'], 200);
+    }
 }

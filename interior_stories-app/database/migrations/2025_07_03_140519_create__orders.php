@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('furniture_id');
             $table->bigInteger('user_id');
-            $table->enum('status', [ 'pending', 'sold'])->default('pending');
+            $table->enum('status', [ 'pending', 'completed'])->default('pending');
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
         });
