@@ -19,6 +19,8 @@ Route::get('/users', [UserController::class, 'checkUser'])
 
 Route::get('/furnitures', [FurnitureController::class, 'displayAvailableFurnitures']);
 
+Route::get('/furnitures/{id}', [FurnitureController::class, 'displayFurnitureDetails']);
+
 Route::post('/orders',[OrderController::class, 'createOrder'])
     ->middleware('auth:sanctum');
     

@@ -13,6 +13,10 @@ return new class extends Migration
             $table->bigInteger('furniture_id');
             $table->bigInteger('user_id');
             $table->enum('status', [ 'pending', 'completed'])->default('pending');
+            $table->string('description');
+            $table->string('measurements');
+            $table->string('color');
+            $table->string('material');
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
         });
