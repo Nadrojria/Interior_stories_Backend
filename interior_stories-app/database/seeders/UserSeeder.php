@@ -18,9 +18,6 @@ class UserSeeder extends Seeder
               FurnitureSeeder::class,
           ]);
         $this->call([
-              FurnitureSoldSeeder::class,
-          ]);
-        $this->call([
               OrderSeeder::class,
           ]);
     }

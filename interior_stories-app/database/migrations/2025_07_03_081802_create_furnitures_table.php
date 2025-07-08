@@ -14,6 +14,7 @@ return new class extends Migration
             $table->decimal('price', 8, 2); // Prix avec 2 décimales
             $table->string('category');
             $table->enum('status', [ 'available', 'unavailable', 'sold'])->default('available');
+            $table->string('alt');
             $table->string('image')->nullable(); // Pour plus tard
             $table->text('description')->nullable(); // Pour plus tard
             $table->timestamps();
