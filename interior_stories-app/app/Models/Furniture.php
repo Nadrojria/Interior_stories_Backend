@@ -19,6 +19,9 @@ class Furniture extends Model
         'image',
         'alt',
         'description',
+        'measurements',
+        'color',
+        'material'
     ];
 
     protected function casts(): array

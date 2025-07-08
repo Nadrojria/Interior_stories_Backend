@@ -10,4 +10,8 @@ class FurnitureController extends Controller {
     public function displayAvailableFurnitures (Request $request) {
         return Furniture::where('status', 'available')->get();
     }
+    
+    public function displayFurnitureDetails ($id) {
+        return Furniture::where('id', $id)->get();
+    }
 }
