@@ -22,7 +22,7 @@ class Order extends Model
         return $this->hasMany(Order::class);
     }
 
-    public function toCustomer(): BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }

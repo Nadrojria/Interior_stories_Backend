@@ -19,16 +19,16 @@ Route::get('/users', [UserController::class, 'checkUser'])
 
 Route::get('/furnitures', [FurnitureController::class, 'displayAvailableFurnitures']);
 
-Route::post('/order',[OrderController::class, 'newOrder'])
+Route::post('/orders',[OrderController::class, 'createOrder'])
     ->middleware('auth:sanctum');
     
-Route::get('/order',[OrderController::class, 'getOrders'])
+Route::get('/orders',[OrderController::class, 'getOrders'])
     ->middleware('auth:sanctum');
 
-Route::delete('/order/{id}', [OrderController::class, 'deleteOrder'])
+Route::delete('/orders/{id}', [OrderController::class, 'deleteOrder'])
     ->middleware('auth:sanctum');
 
-Route::put('/order',[OrderController::class, 'completeOrders'])
+Route::put('/orders',[OrderController::class, 'completeOrders'])
     ->middleware('auth:sanctum');
 
 

@@ -10,7 +10,7 @@ use App\Models\Furniture;
 
 class OrderController extends Controller
 {
-    public function newOrder(Request $request) {
+    public function createOrder(Request $request) {
         
         $user = auth()->user();
         $user_id = $user->id;
@@ -37,8 +37,15 @@ class OrderController extends Controller
         $user = auth()->user();
         $user_id = $user->id;
 
-        return Order::where('status', 'pending')->where('user_id', $user_id)
+        $orders = Order::where('status', 'pending')->where('user_id', $user_id)
             ->get();
+
+        $furnitureIds = $orders->pluck('furniture_id');
+
+        $furnitureList = Furniture::wherein('id', $furnitureIds)
+            ->get();
+
+        return response()->json($furnitureList);
     }
 
     public function deleteOrder($id) {

@@ -17,6 +17,7 @@ class Furniture extends Model
         'category',
         'status',
         'image',
+        'alt',
         'description',
     ];
 
