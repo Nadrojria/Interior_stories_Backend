@@ -49,18 +49,15 @@ class OrderController extends Controller
     }
 
     public function deleteOrder($id) {
-
         $user = auth()->user();
-        $order = Order::find($id);
-
+        $order = Order::where('furniture_id', $id);
+        
         if (!$order) {
             return response()->json(['message' => 'Article not found.'], 404);
         }
-
-        $furniture_id = $order->furniture_id;
-        $order->delete();
+        $order->delete(); 
         
-        Furniture::where('id', $furniture_id)
+        Furniture::where('id', $id)
             ->update(['status' => 'available']); 
 
         return response()->json(['message' => 'Article cancelled'], 200);
