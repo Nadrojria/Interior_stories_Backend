@@ -17,7 +17,7 @@ Période : 6eme mois de formation
 | Fonctionnalité                      | Compétence acquise                                                               |
 | ----------------------------------- | -------------------------------------------------------------------------------- |
 | **Création d'une API REST**         | Développement de routes, contrôleurs et logique de traitement                    |
-| **Connexion à une base de données** | Utilisation d’Eloquent ORM pour effectuer des requêtes SQL vers une base MySQL   |
+| **Connexion à une base de données** | Utilisation d’Eloquent ORM pour effectuer des requêtes SQL vers une base PostgreSQL   |
 | **Gestion des requêtes HTTP**       | Mise en place de routes `GET`, `POST`, `DELETE` et `PUT` via Laravel             |
 | **Filtrage des données**            | Affichage conditionnel (ex: meubles disponibles uniquement)                      |
 | **Utilisation de middlewares**      | Protection des routes par authentification (Sanctum)                             |
